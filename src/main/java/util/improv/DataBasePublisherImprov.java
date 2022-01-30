@@ -116,6 +116,7 @@ public class DataBasePublisherImprov {
                         return;
                     }
                     if (IndustryClassifierImprov.industryId(industry)){
+                        stockReport.setIndustry(industry);
                         return;
                     }
                 }
