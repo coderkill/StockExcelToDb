@@ -4,7 +4,6 @@ import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 import common.Connector;
 import common.DataBaseName;
-import oracle.jdbc.proxy.annotation.Pre;
 import org.apache.log4j.Logger;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -115,8 +114,8 @@ public class DataBasePublisherImprov {
                     } else {
                         return;
                     }
-                    if (IndustryClassifierImprov.industryId(industry)){
-                        stockReport.setIndustry(industry);
+                    stockReport.setIndustry(industry);
+                    if (IndustryClassifierImprov.industryId(industry)) {
                         return;
                     }
                 }
@@ -124,7 +123,6 @@ public class DataBasePublisherImprov {
                 sql_statement_industry.setInt(1, industryId);
                 sql_statement_industry.setString(2, industry);
                 sql_statement_industry.addBatch();
-                stockReport.setIndustry(industry);
                 IndustryClassifierImprov.addIndustry(industry);
             }
         } catch (SQLException e) {
@@ -133,7 +131,7 @@ public class DataBasePublisherImprov {
         }
     }
 
-    public void recovery(PreparedStatement sql_statement){
+    public void recovery(PreparedStatement sql_statement) {
         IndustryClassifierImprov.setUp(sql_statement);
         StockClassifier.setUp(sql_statement);
     }

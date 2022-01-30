@@ -24,7 +24,7 @@ public class MainMethod {
                 case "1":
                     logger.info("Enter input file");
                     String inputFile = sc.nextLine();
-//                    new DataBasePublisherImprov().insert("D:\\nifty_data.xlsx");
+//                    new DataBasePublisherImprov().insert("/nifty_data.xlsx");
                     new DataBasePublisherImprov().insert(inputFile);
                     break;
                 case "2":

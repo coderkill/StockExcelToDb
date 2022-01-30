@@ -110,13 +110,12 @@ public class DataBasePublisher {
                     } else {
                         return;
                     }
+                    stockReport.setIndustry(industry);
                     if (IndustryClassifier.industryId(industry)) {
-                        stockReport.setIndustry(industry);
                         return;
                     }
                 }
                 sql_statement_industry.setString(1, industry);
-                stockReport.setIndustry(industry);
                 sql_statement_industry.execute();
                 IndustryClassifier.addIndustry(industry);
             }

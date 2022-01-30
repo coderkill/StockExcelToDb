@@ -42,12 +42,7 @@ public class IndustryClassifierImprov {
             rs = prep.executeQuery("select MAX(IndustryId) as maximum from " + DataBaseName.industrytype);
             rs.next();
             id = rs.getInt("maximum");
-            if (id == 0) {
-                id = 1;
-            }
-            else {
-                id++;
-            }
+            id++;
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             logger.error(e);
