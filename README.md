@@ -3,7 +3,7 @@ Schema Design:
  ![image](https://user-images.githubusercontent.com/26936240/151702115-bdc6bcf7-6b96-4f34-9a39-a267b8c23217.png)
 
 The above is the basic schema diagram for the data for which is presented as follow:
- 
+ ![image](https://user-images.githubusercontent.com/26936240/151702235-12281c63-2e23-4af9-8bc7-67df8a220ef3.png)
 
 Symbol is considered to be the primary key of the table Stocks and the foreign key of the table StockInfo. 
 Symbol, StockName and Industry are repeated data and can come several times and are considered to be prime attributes which don’t change overtime. Since they are repeated overtime we can see that this data would cause redundancy if put together with the table stock_info. In order to remove the redundancy we have created another table Stocks which contains the basic details of the stock. 
