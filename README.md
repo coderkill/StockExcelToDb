@@ -1,6 +1,7 @@
 Schema Design:
 
- 
+ ![image](https://user-images.githubusercontent.com/26936240/151702115-bdc6bcf7-6b96-4f34-9a39-a267b8c23217.png)
+
 The above is the basic schema diagram for the data for which is presented as follow:
  
 
@@ -9,7 +10,8 @@ Symbol, StockName and Industry are repeated data and can come several times and 
 In the table StockInfo we see that the data is dependent on the Report date and the Symbol
 And the rest all are non prime attributes. So in this case Symbol and Report together make a composite key. This is because they both uniquely identify a row in the table. The above table is in 2NF but has a transitive dependency with Industry. The above Stocks table can be further split into 2 tables, Stocks and IndustryType and will be linked with each other using IndustryID. (IndustryId is a self generated auto_incremented value)
 
- 
+ ![image](https://user-images.githubusercontent.com/26936240/151702118-4775cfe9-e6db-4d36-b703-3fce953f746b.png)
+
 
 The above diagram would be in 4NF, this is assuming the StockName is not always unique(Not a candidate key). If the StockName is always unique then it would be a 3NF structure as BCNF(4NF) requires the table to not contain 2 keys which can identify the data (Symbol and StockName). But splitting the table up more does not make sense in terms of efficiency and space. So the above would be considered the highest form of normalization possible.
 
